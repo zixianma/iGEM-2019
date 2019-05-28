@@ -1,0 +1,46 @@
+header > nav > form {
+    padding: 0px 20px 0px 0px
+}
+.jumbotron {
+    padding: 150px 30px 10px 50px;
+}
+
+.jumbotron > .input-group {
+    padding: 20px 20px 10px 20px;
+}
+
+.jumbotron > .btn {
+    margin: 10px 20px 
+}
+
+/* .jumbotron > label {
+    margin: 10px 20px 
+} */
+
+.card {
+    margin: 50px 10px 50px 10px;
+    padding: 0px
+}
+
+.card > h3 {
+    margin: 30px 20px 10px 20px;
+}
+
+#paramsForm {
+    margin: 20px 30px 20px 30px
+}
+
+#paramsForm > input {
+    margin: 0px 20px 0px 20px
+}
+
+#normalize_btn, #show_btn {
+    margin: 10px 20px 30px 30px
+}
+
+button, .btn {
+    background-color: #8C1515;
+    color: white;
+    
+
+}
