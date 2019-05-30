@@ -1,5 +1,4 @@
-function clear(){
-    console.log("hello");
+function remove(){
     d3.select("#chart").selectAll("*").remove();
 }
 
@@ -52,6 +51,7 @@ var totalSize = 0;
 var vis = d3.select("#chart").append("svg:svg")
     .attr("width", width)
     .attr("height", height)
+    .attr("align","center")
     .append("svg:g")
     .attr("id", "container")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
@@ -176,7 +176,7 @@ function mouseleave(d) {
 function initializeBreadcrumbTrail() {
   // Add the svg area.
   var trail = d3.select("#sequence").append("svg:svg")
-      .attr("width", 3000)
+      .attr("width", 5000)
       .attr("height", 50)
       .attr("id", "trail");
   // Add the label at the end, for the percentage.
