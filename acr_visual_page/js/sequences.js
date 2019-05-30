@@ -1,3 +1,8 @@
+function clear(){
+    console.log("hello");
+    d3.select("#chart").selectAll("*").remove();
+}
+
 function sunburst_visualize(){
 // Dimensions of sunburst.
 var width = 2000;
@@ -6,7 +11,7 @@ var radius = Math.min(width, height) / 2;
 
 // Breadcrumb dimensions: width, height, spacing, width of tip/tail.
 var b = {
-  w: 30, h: 30, s: 3, t: 10
+  w: 30, h: 30, s: 2, t: 10
 };
 
 // Mapping of step names to colors.
@@ -62,7 +67,11 @@ var arc = d3.arc()
 
 // Use d3.text and d3.csvParseRows so that we do not need to have a header
 // row, and can receive the csv as an array of arrays.
-d3.text("https://raw.githubusercontent.com/zixianma/iGEM-2019/master/test_sequence.csv", function(text) {
+var e = document.getElementById('acr_id');
+var acr_id = e.options[e.selectedIndex].text;
+var url = "https://raw.githubusercontent.com/zixianma/iGEM-2019/master/sunburst_data/" + acr_id + ".csv"
+console.log(url)
+d3.text(url, function(text) {
   var csv = d3.csvParseRows(text);
   var json = buildHierarchy(csv);
   createVisualization(json);
