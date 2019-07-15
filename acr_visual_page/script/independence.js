@@ -56,7 +56,7 @@ d3.csv(url, function(data) {
     .domain([1,100])
 
   // create a tooltip
-  var tooltip = d3.select("#my_dataviz")
+  var tooltip = d3.select("#heatmap")
     .append("div")
     .style("opacity", 0)
     .attr("class", "tooltip")

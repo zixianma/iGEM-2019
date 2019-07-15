@@ -2,86 +2,79 @@
 <html lang="en">
 
 <head>
-<title>Anti-CRISPR Proteins Visualization Page</title>
-    <script src="https://d3js.org/d3.v4.js"></script>
-    <script type="text/javascript" src="js/sequences.js"></script>
-    <script type="text/javascript">
-        // Hack to make this example display correctly in an iframe on bl.ocks.org
-        d3.select(self.frameElement).style("height", "700px");
-    </script> 
+  <title>Anti-CRISPR Proteins Visualization Page</title>
+  <script src="https://d3js.org/d3.v4.js"></script>
+  <script type="text/javascript" src="js/sequences.js"></script>
+  <script type="text/javascript">
+    // Hack to make this example display correctly in an iframe on bl.ocks.org
+    d3.select(self.frameElement).style("height", "700px");
+  </script>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
   <script src="script/script.js"></script>
   <script type="text/javascript" src="https://d3js.org/d3.v4.js"></script>
   <script type="text/javascript" src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600">
+  <link rel="stylesheet" type="text/css" href="css/sequences.css" />
 
-    <link rel="stylesheet" type="text/css"
-      href="https://fonts.googleapis.com/css?family=Open+Sans:400,600">
-    <link rel="stylesheet" type="text/css" href="css/sequences.css"/>
- 
 </head>
-
 <body class="bg-light">
-    <header>     
-        <nav class='navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow'>
-                  <a class='navbar-brand col-sm-3 col-md-2 mr-0' style="font-size:30px" href='visualization.html'>
-                      
-                          <img src='./image/stanford-logo-transparent.png' width='100' height='100' alt='stanford-logo'>
-                          Anti-CRISPR Proteins Visualization Tool
-                  </a>
-                  <a class="nav-item nav-link text-white active" style="font-size:25px;margin:0px -10px 0px 700px;width:10px" href="visualization.html">Independence</a>
-                  <a class="nav-item nav-link text-white" style="font-size:25px;width:10px" href="test.html">Dependence</a>
-                  
-            <form class='form-inline mt-2 mt-md-0'>
-                <input class='form-control mr-sm-2' type='text' placeholder='Search' aria-label='Search'>
-                <button class='btn my-2 my-sm-0' type='submit'>Search</button>
-            </form>
-        </nav>
-    </header>
-    <div class="jumbotron">
-        <h1 class="display-4">Now,</h1>
-        <p class="lead">Try visualizing the conditional probabilities of the amino acids of Acr given the previous ones!</p>
-        <hr class="my-4">
-        <label for="basic-url">Select an Acr you wish yo visualize :))</label>
-        <div class="input-group">
-            <select class="custom-select col-md-3 col-lg-2" id="acr_id">
-                <option selected>Choose...</option>
-                <option value="1">acrf6</option>
-                <option value="2">acrf7</option>
-                <option value="3">acrf9</option>
-                <option value="4">acrIIa1</option>
-                <option value="5">acrIIa2</option>
-                <option value="6">acrIIa3</option>
-                <option value="7">acrIIa4</option>
-                <option value="8">acrIIc1</option>
-                <option value="9">acrIIc2</option>
-                <option value="10">acrIIc3</option>
-                <option value="11">acrIIf6</option>
-                <option value="12">acrVIB</option>
-            </select>
-            <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button" onclick="sunburst_visualize()">Visualize</button>
-                <button class="btn btn-outline-secondary" type="button" onclick="remove()">Clear</button>
-            </div>
-        </div>
+  <header>
+    <nav class='navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow'>
+      <a class='navbar-brand col-sm-3 col-md-2 mr-0' style="font-size:30px" href='visualization.html'>
+
+        <img src='./image/stanford-logo-transparent.png' width='100' height='100' alt='stanford-logo'>
+        Anti-CRISPR Proteins Visualization Tool
+      </a>
+      <a class="nav-item nav-link text-white active" style="font-size:25px;margin:0px -10px 0px 700px;width:10px"
+        href="visualization.html">Independence</a>
+      <a class="nav-item nav-link text-white" style="font-size:25px;width:10px" href="dependence.html">Dependence</a>
+
+      <form class='form-inline mt-2 mt-md-0'>
+        <input class='form-control mr-sm-2' type='text' placeholder='Search' aria-label='Search'>
+        <button class='btn my-2 my-sm-0' type='submit'>Search</button>
+      </form>
+    </nav>
+  </header>
+  <div class="jumbotron">
+    <h1 class="display-4">Now,</h1>
+    <p class="lead">Try visualizing the conditional probabilities of the amino acids of Acr given the previous ones!</p>
+    <hr class="my-4">
+    <label for="basic-url">Select an Acr you wish yo visualize :))</label>
+    <div class="input-group">
+      <select class="custom-select col-md-3 col-lg-2" id="acr_id">
+        <option selected>Choose...</option>
+        <option value="1">acrf6</option>
+        <option value="2">acrf7</option>
+        <option value="3">acrf9</option>
+        <option value="4">acrIIa1</option>
+        <option value="5">acrIIa2</option>
+        <option value="6">acrIIa3</option>
+        <option value="7">acrIIa4</option>
+        <option value="8">acrIIc1</option>
+        <option value="9">acrIIc2</option>
+        <option value="10">acrIIc3</option>
+        <option value="12">acrVIB</option>
+      </select>
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button" onclick="sunburst_visualize()">Visualize</button>
+        <button class="btn btn-outline-secondary" type="button" onclick="remove()">Clear</button>
+      </div>
     </div>
-                <div id="main">
-                  <div id="sequence"></div>
-                  <div id="chart" align="center">
-                    <div id="explanation" style="visibility: hidden;">
-                      <span id="percentage"></span><br/>
-                      of proteins have this/these amino acid sequence(s)
-                    </div>
-                  </div>
-                </div>
-                <!-- <div id="sidebar">
+  </div>
+  <div id="main">
+    <div id="sequence"></div>
+    <div id="chart" align="center">
+      <div id="explanation" style="visibility: hidden;">
+        <span id="percentage"></span><br />
+        of proteins have this amino acid sequence
+      </div>
+    </div>
+  </div>
+  <!-- <div id="sidebar">
                   <input type="checkbox" id="togglelegend"> Legend<br/>
                   <div id="legend" style="visibility: hidden;"></div>
                 </div> -->
 </body>
+
 </html>
-
-
-
-
-

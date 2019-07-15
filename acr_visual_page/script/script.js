@@ -1,8 +1,7 @@
 
 d3.csv("https://raw.githubusercontent.com/zixianma/iGEM-2019/master/core_dataset.csv", function (data) {
     var new_data = filter(data);
-    console.log(new_data.length);
-    // var csv = generateSequenceCSV(new_data)
+    var csv = generateSequenceCSV(new_data)
 
     // var blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
     // var a = document.createElement('a');
