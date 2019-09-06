@@ -25,7 +25,7 @@ def main():
 
     #Convert the counts of a.a.s into probabilities
     aa_dist = convertCountIntoProb(aa_dist)
-    new_data = rearrangeDataForHeatmap(aa_dist,"acrVIB")
+    new_data = rearrangeDataForHeatmap(aa_dist,"acrVIB"position- 34)
     #Find out at which positions there are more than one possible a.a.s, and those are 
     #the positions of interest
     pos_of_interest =[]
