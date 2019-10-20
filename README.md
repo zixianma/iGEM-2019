@@ -1,2 +1,2 @@
 # iGEM-2019
-This repo is for storing computational bio tools for iGEM-2019
+This repo contains all the software tools developed by iGEM 2019 Stanford Team
